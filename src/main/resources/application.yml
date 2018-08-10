@@ -5,7 +5,7 @@ app:
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/local_tsm
+    url: jdbc:mysql://127.0.0.1:3306/demo
     username: root
     password: 123456
     type: com.alibaba.druid.pool.DruidDataSource

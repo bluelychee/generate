@@ -1,7 +1,0 @@
-# 启用缓存:建议生产开启
-# 建议模版是否存在
-spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp
-      suffix: .jsp

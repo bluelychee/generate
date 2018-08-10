@@ -4,15 +4,15 @@
 
 <mapper namespace="com.xiaozhi.generate.user.dao.UserMapper">
 	<sql id="cols">
-		USER_ID
+		id
 	</sql>
 	
 	<sql id="tableName">
-		auth_user
+		sys_user
 	</sql>
 
 	<resultMap type="com.xiaozhi.generate.user.bean.User" id="UserMap">
-		<id column="USER_ID" property="id"/>
+		<id column="id" property="id"/>
 
 	</resultMap>
 	
