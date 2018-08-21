@@ -32,5 +32,5 @@ public class CommonExceptionHandler {
         result.put("respMsg", e.getMessage());
         //正常开发中，可创建一个统一响应实体，如CommonResp
         return result;
-    }
+}
 }
