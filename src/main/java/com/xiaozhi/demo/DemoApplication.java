@@ -1,6 +1,6 @@
-package com.xiaozhi.generate;
+package com.xiaozhi.demo;
 
-import com.xiaozhi.generate.servlet.CustomFilter;
+import com.xiaozhi.demo.servlet.CustomFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -12,10 +12,10 @@ import javax.servlet.Filter;
 
 @SpringBootApplication
 @ServletComponentScan
-public class GenerateApplication extends SpringBootServletInitializer {
+public class DemoApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(GenerateApplication.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 
