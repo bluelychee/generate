@@ -17,7 +17,7 @@ public class FreemarkerController {
     public String index(String name, ModelMap map) {
         map.addAttribute("name", name);
         map.addAttribute("from", "lqdev.cn");
-        // 模版名称，实际的目录为：src/main/resources/templates/thymeleaf.html
+        // 模版名称，实际的目录为：src/main/resources/templates/head.html
         return "freemarker";
     }
 
@@ -26,7 +26,7 @@ public class FreemarkerController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", name);
         mv.addObject("from", "lqdev.cn");
-        // 模版名称，实际的目录为：src/main/resources/templates/thymeleaf.html
+        // 模版名称，实际的目录为：src/main/resources/templates/head.html
         mv.setViewName("freemarker");
         return mv;
     }
