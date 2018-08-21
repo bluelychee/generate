@@ -1,4 +1,4 @@
-package com.xiaozhi.generate.controller;
+package com.xiaozhi.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,15 +10,15 @@ import org.springframework.web.servlet.ModelAndView;
  * Create by lizhihui on 2018/8/10
  */
 @Controller
-@RequestMapping("/freemarker")
-public class FreemarkerController {
+@RequestMapping("/thymeleaf")
+public class ThymeleafController {
     // 正常和springmvc设置返回参数是意义的用法了
     @GetMapping("/map")
     public String index(String name, ModelMap map) {
         map.addAttribute("name", name);
         map.addAttribute("from", "lqdev.cn");
         // 模版名称，实际的目录为：src/main/resources/templates/thymeleaf.html
-        return "freemarker";
+        return "thymeleaf";
     }
 
     @GetMapping("/mv")
@@ -27,7 +27,7 @@ public class FreemarkerController {
         mv.addObject("name", name);
         mv.addObject("from", "lqdev.cn");
         // 模版名称，实际的目录为：src/main/resources/templates/thymeleaf.html
-        mv.setViewName("freemarker");
+        mv.setViewName("thymeleaf");
         return mv;
     }
 }

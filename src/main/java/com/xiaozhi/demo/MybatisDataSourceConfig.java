@@ -1,4 +1,4 @@
-package com.xiaozhi.generate;
+package com.xiaozhi.demo;
 
 import com.github.pagehelper.PageInterceptor;
 import org.apache.ibatis.plugin.Interceptor;
@@ -7,8 +7,6 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -22,7 +20,7 @@ import java.util.Properties;
  * Create by lizhihui on 2018/8/9
  */
 @Configuration
-@MapperScan(basePackages = "com.xiaozhi.generate", sqlSessionTemplateRef  = "mybatisMasterSqlSessionTemplate")
+@MapperScan(basePackages = "com.xiaozhi.demo", sqlSessionTemplateRef  = "mybatisMasterSqlSessionTemplate")
 public class MybatisDataSourceConfig {
 
     @Bean
@@ -56,7 +54,7 @@ public class MybatisDataSourceConfig {
         mScannerConfigurer.setSqlSessionFactoryBeanName("mybatisMasterSqlSessionFactory");
         //mScannerConfigurer.setBasePackage("com.my.boot.test.entity");
         //mScannerConfigurer.setBasePackage("com.my.boot.test.mapper");
-        mScannerConfigurer.setBasePackage("com.xiaozhi.generate");
+        mScannerConfigurer.setBasePackage("com.xiaozhi.demo");
         return mScannerConfigurer;
     }
 

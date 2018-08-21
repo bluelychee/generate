@@ -1,7 +1,7 @@
-package com.xiaozhi.generate.user.service;
+package com.xiaozhi.demo.user.service;
 
-import com.xiaozhi.generate.user.bean.User;
-import com.xiaozhi.generate.user.dao.UserMapper;
+import com.xiaozhi.demo.user.bean.User;
+import com.xiaozhi.demo.user.dao.UserMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

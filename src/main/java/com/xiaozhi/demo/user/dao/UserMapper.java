@@ -1,7 +1,7 @@
-package com.xiaozhi.generate.user.dao;
+package com.xiaozhi.demo.user.dao;
 
 
-import com.xiaozhi.generate.user.bean.User;
+import com.xiaozhi.demo.user.bean.User;
 
 import java.util.List;
 

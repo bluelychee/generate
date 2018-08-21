@@ -1,6 +1,6 @@
-package com.xiaozhi.generate;
+package com.xiaozhi.demo;
 
-import com.xiaozhi.generate.servlet.CustomSpringInterceptor;
+import com.xiaozhi.demo.servlet.CustomSpringInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;

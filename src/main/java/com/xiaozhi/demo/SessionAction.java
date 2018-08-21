@@ -1,7 +1,7 @@
-package com.xiaozhi.generate;
+package com.xiaozhi.demo;
 
-import com.xiaozhi.generate.user.bean.User;
-import com.xiaozhi.generate.user.service.UserService;
+import com.xiaozhi.demo.user.bean.User;
+import com.xiaozhi.demo.user.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
