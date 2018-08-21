@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import com.xiaozhi.demo.servlet.CustomSpringInterceptor;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

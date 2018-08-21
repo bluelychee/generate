@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import com.alibaba.fastjson.JSON;
 import com.xiaozhi.demo.user.bean.User;
@@ -18,7 +18,7 @@ import java.util.List;
 public class DemoApplicationTests {
 
 	@Resource
-	UserService userService;
+    UserService userService;
 	
 	private Logger logger = LoggerFactory.getLogger(DemoApplicationTests.class);
 	

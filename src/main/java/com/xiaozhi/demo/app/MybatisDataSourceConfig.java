@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import com.github.pagehelper.PageInterceptor;
 import org.apache.ibatis.plugin.Interceptor;

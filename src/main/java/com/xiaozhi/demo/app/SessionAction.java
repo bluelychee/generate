@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import com.xiaozhi.demo.user.bean.User;
 import com.xiaozhi.demo.user.service.UserService;

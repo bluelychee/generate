@@ -1,4 +1,4 @@
-package com.xiaozhi.demo;
+package com.xiaozhi.demo.app;
 
 import com.xiaozhi.demo.servlet.CustomFilter;
 import org.springframework.boot.SpringApplication;
@@ -7,11 +7,13 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 
 import javax.servlet.Filter;
 
 @SpringBootApplication
-@ServletComponentScan
+@ServletComponentScan(basePackages = {"com.xiaozhi.demo"})
+@ComponentScan(basePackages = {"com.xiaozhi.demo"})
 public class DemoApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
