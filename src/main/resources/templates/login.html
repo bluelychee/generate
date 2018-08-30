@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en" th:include="/common/include">
-    <meta charset="UTF-8" />
-    <title>thymeleaf简单示例</title>
+<link href="/h-ui.admin/css/H-ui.login.css" rel="stylesheet" type="text/css" />
+<title>慧营销本地部署V1.0</title>
 </head>
 <body>
-<h1>Hello thymeleaf</h1>
-<!-- 这里注意：拼接时 变量要单独使用${param}，其他的常量使用''包裹 -->
-<h2 th:text="'名称：'+${name}+'，来自：'+${from}">默认值</h2>
+<div class="header"></div>
+<div class="loginWraper">
+    <div id="loginform" class="loginBox">
+        <form class="form form-horizontal" action="/login"
+              method="post">
+            <div class="row cl">
+                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+                <div class="formControls col-xs-8">
+                    <input name="account" type="text" placeholder="账户" class="input-text size-L">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+                <div class="formControls col-xs-8">
+                    <input name="password" type="password" placeholder="密码" class="input-text size-L">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <input class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}"
+                           onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;">
+                    <img  onclick="reloadcode()">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <label for="online"> <input type="checkbox" name="online" id="online" value=""> 使我保持登录状态
+                    </label>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <span style="color:red"> ${message}</span>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="formControls col-xs-8 col-xs-offset-3">
+                    <input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;">
+                    <input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="footer">Copyright 企峰通信技术有限公司</div>
 </body>
+<script type="text/javascript">
+    if (top.location != self.location) {
+        top.location = self.location;
+    }
+    function reloadcode() {
+        var verify = document.getElementById("code");
+        verify.setAttribute("src", "/getCaptcha?t=" + Math.random());
+    }
+</script>
 </html>

@@ -1,0 +1,7 @@
+###  freemarker 视图配置
+spring:
+  freemarker:
+    cache: false
+    suffix: .html
+    charset: UTF-8
+    template-loader-path: classpath:/templates/

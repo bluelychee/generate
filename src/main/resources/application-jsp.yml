@@ -1,0 +1,6 @@
+### jsp 视图配置
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp

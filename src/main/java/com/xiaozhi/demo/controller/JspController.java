@@ -10,10 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
  * Create by lizhihui on 2018/8/10
  */
 @Controller
-@RequestMapping("/jsp")
+
 public class JspController {
-    // 正常和springmvc设置返回参数是意义的用法了
-    @GetMapping("/map")
+    @RequestMapping("/jsp")
     public String index(String name, ModelMap map) {
         map.addAttribute("name", name);
         map.addAttribute("from", "lqdev.cn");
@@ -21,13 +20,4 @@ public class JspController {
         return "index";
     }
 
-    @GetMapping("/mv")
-    public ModelAndView index(String name) {
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("name", name);
-        mv.addObject("from", "lqdev.cn");
-        // 模版名称，实际的目录为：src/main/resources/templates/head.html
-        mv.setViewName("index");
-        return mv;
-    }
 }

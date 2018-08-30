@@ -1,0 +1,12 @@
+### thymeleaf
+spring:
+  thymeleaf:
+   cache: false
+   check-template-location: true
+   content-type: text/html
+   enabled: true
+   encoding: utf-8
+   excluded-view-names:
+   prefix: classpath:/templates/
+   suffix: .html
+   mode: LEGACYHTML5
