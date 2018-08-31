@@ -42,11 +42,8 @@ public class MybatisDataSourceConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         //bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:com.mybatis.mapper/*.xml"));
-
         // 设置MyBatis分页插件
-        PagerInterceptor pageInterceptor = this.initPageInterceptor();
-        bean.setPlugins(new Interceptor[]{pageInterceptor});
-
+        bean.setPlugins(new Interceptor[]{pagerInterceptor(),logTimeInterceptor()});
         return bean.getObject();
     }
 
@@ -71,13 +68,7 @@ public class MybatisDataSourceConfig {
     }
 
     @Bean
-    public PagerInterceptor initPageInterceptor(){
-       /* PageInterceptor pageInterceptor = new PageInterceptor();
-        Properties properties = new Properties();
-        properties.setProperty("helperDialect", "mysql");
-        properties.setProperty("offsetAsPageNum", "true");
-        properties.setProperty("rowBoundsWithCount", "true");
-        pageInterceptor.setProperties(properties);*/
+    public PagerInterceptor pagerInterceptor(){
         PagerInterceptor pageInterceptor = new PagerInterceptor();
         Properties properties = new Properties();
         properties.setProperty("dialect", "mysql");
@@ -87,7 +78,7 @@ public class MybatisDataSourceConfig {
     }
 
     @Bean
-    public LogTimeInterceptor initLogTimeInterceptor(){
+    public LogTimeInterceptor logTimeInterceptor(){
         Properties properties = new Properties();
         properties.setProperty("dialect", "mysql");
         properties.setProperty("pageSqlId", ".*ListPage.*");

@@ -52,11 +52,11 @@ public class LogTimeInterceptor implements Interceptor {
         long end = System.currentTimeMillis();
         long time = (end - start);
         InfoUtil.setQueryNum();
-        if (time > ConfigUtil.getIntValue("slow_sql_time", 1)) {
+       // if (time > ConfigUtil.getIntValue("slow_sql_time", 1)) {
             String sql = getSql(configuration, boundSql, sqlId, time);
             logger.debug("\n执行方法:" + sql);
             LogSlowSql.logSql(time, sql);
-        }
+       // }
         return returnValue;
     }
 
