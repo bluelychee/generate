@@ -22,7 +22,7 @@ public class Test${table.serviceName} extends BaseTests{
 	@Test
    	public void testInsert() {
         ${table.beanName}Bean entity = new ${table.beanName}Bean();
-       	${table.serviceName?uncap_first}.insert(entity,user);
+       	${table.serviceName?uncap_first}.insert(entity);
  	}
 
 	@Test
@@ -32,7 +32,7 @@ public class Test${table.serviceName} extends BaseTests{
             ${table.beanName}Bean entity = new ${table.beanName}Bean();
             entitys.add(entity);
 		}
-        ${table.serviceName?uncap_first}.insertBatch(entitys,user);
+        ${table.serviceName?uncap_first}.insertBatch(entitys);
 	}
 	
 	@Test
@@ -73,7 +73,7 @@ public class Test${table.serviceName} extends BaseTests{
     	page.setPageSize(1);
         List<${table.beanName}Bean> data = ${table.serviceName?uncap_first}.findListPage(page);
         if(data!=null && data.size()>0){
-        	${table.serviceName?uncap_first}.update(data.get(0), user);
+        	${table.serviceName?uncap_first}.update(data.get(0));
         }
         logger.info(JSON.toJSONString(data));
     }

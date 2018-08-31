@@ -13,7 +13,7 @@ import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSON;
 import com.xiaozhi.rbt.sys.bean.SysUserBean;
 
-public class TestSysUserService extends BaseTests {
+public class TestSysUserService extends BaseTests{
 	@Resource
 	SysUserService sysUserService;
 	
@@ -45,7 +45,7 @@ public class TestSysUserService extends BaseTests {
 	@Test
 	public void testFindListPage(){
   		SysUserBean item = new SysUserBean();
-		Pager<SysUserBean> page = new Pager<SysUserBean>();
+		Pager<SysUserBean> page = new Pager <SysUserBean>();
     	page.setItem(item);
         List<SysUserBean> data = sysUserService.findListPage(page);
         logger.info(JSON.toJSONString(data));

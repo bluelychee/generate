@@ -1,19 +1,19 @@
-package com.xiaozhi.web.sys;
+package com.xiaozhi.rbt.web.sys;
 
 import java.util.List;
 
 import javax.annotation.Resource;
 
-import com.xiaozhi.common.domain.BaseJsonResult;
-import com.xiaozhi.common.exception.RunException;
-import com.xiaozhi.common.interceptor.Pager;
-import com.xiaozhi.common.util.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xiaozhi.common.domain.BaseJsonResult;
+import com.xiaozhi.common.exception.RunException;
+import com.xiaozhi.common.interceptor.Pager;
+import com.xiaozhi.common.util.StringUtils;
 import com.xiaozhi.rbt.sys.bean.SysUserBean;
 import com.xiaozhi.rbt.sys.service.SysUserService;
 
@@ -26,7 +26,7 @@ public class SysUserAction {
 	SysUserService sysUserService;
 
 	@RequestMapping(value = "/listPage")
-	public String listPage(ModelMap model,SysUserBean item) throws RunException {
+	public String listPage(ModelMap model,SysUserBean item) throws RunException{
 		return "sys/sysUser/listPage";
 	}
 	
