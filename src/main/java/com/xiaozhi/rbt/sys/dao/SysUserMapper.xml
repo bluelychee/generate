@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiaozhi.rbt.sys.dao.SysUserMapper">
+	<sql id="cols">
+		t.id,t.org_id,t.user_name,t.password_md5,t.mobile,t.email,t.sex,t.dept,t.input_acc,t.input_time,t.update_acc,t.update_time,t.status,t.is_del
+	</sql>
+	
+	<sql id="tableName">
+		sys_user
+	</sql>
+
+	<sql id="setSql">
+		<set>
+			<if test="userName != null">user_name = #{userName},</if>
+			<if test="passwordMd5 != null">password_md5 = #{passwordMd5},</if>
+			<if test="mobile != null">mobile = #{mobile},</if>
+			<if test="email != null">email = #{email},</if>
+			<if test="sex != null">sex = #{sex},</if>
+			<if test="dept != null">dept = #{dept},</if>
+			<if test="inputAcc != null">input_acc = #{inputAcc},</if>
+			<if test="inputTime != null">input_time = #{inputTime},</if>
+			<if test="updateAcc != null">update_acc = #{updateAcc},</if>
+			<if test="updateTime != null">update_time = #{updateTime},</if>
+			<if test="status != null">status = #{status},</if>
+			<if test="isDel != null">is_del = #{isDel},</if>
+		</set>
+	</sql>
+	
+	<sql id="whereSql">
+		<if test="orgId != null and orgId != ''">and t.org_id = #{orgId}</if>
+		<if test="id != null and id != ''">and t.id = #{id}</if>
+		<if test="userName != null and userName != ''">and t.user_name = #{userName}</if>
+		<if test="passwordMd5 != null and passwordMd5 != ''">and t.password_md5 = #{passwordMd5}</if>
+		<if test="mobile != null and mobile != ''">and t.mobile = #{mobile}</if>
+		<if test="email != null and email != ''">and t.email = #{email}</if>
+		<if test="sex != null">and t.sex = #{sex}</if>
+		<if test="dept != null and dept != ''">and t.dept = #{dept}</if>
+		<if test="inputAcc != null and inputAcc != ''">and t.input_acc = #{inputAcc}</if>
+		<if test="inputTime != null">and t.input_time = #{inputTime}</if>
+		<if test="updateAcc != null and updateAcc != ''">and t.update_acc = #{updateAcc}</if>
+		<if test="updateTime != null">and t.update_time = #{updateTime}</if>
+		<if test="status != null">and t.status = #{status}</if>
+		<if test="isDel != null">and t.is_del = #{isDel}</if>
+	</sql>
+	
+	<sql id="whereSqlPage">
+		<if test="item.orgId != null and item.orgId != ''">and t.org_id = #{item.orgId}</if>
+		<if test="item.id != null and item.id != ''">and t.id = #{item.id}</if>
+		<if test="item.userName != null and item.userName != ''">and t.user_name = #{item.userName}</if>
+		<if test="item.passwordMd5 != null and item.passwordMd5 != ''">and t.password_md5 = #{item.passwordMd5}</if>
+		<if test="item.mobile != null and item.mobile != ''">and t.mobile = #{item.mobile}</if>
+		<if test="item.email != null and item.email != ''">and t.email = #{item.email}</if>
+		<if test="item.sex != null">and t.sex = #{item.sex}</if>
+		<if test="item.dept != null and item.dept != ''">and t.dept = #{item.dept}</if>
+		<if test="item.inputAcc != null and item.inputAcc != ''">and t.input_acc = #{item.inputAcc}</if>
+		<if test="item.inputTime != null">and t.input_time = #{item.inputTime}</if>
+		<if test="item.updateAcc != null and item.updateAcc != ''">and t.update_acc = #{item.updateAcc}</if>
+		<if test="item.updateTime != null">and t.update_time = #{item.updateTime}</if>
+		<if test="item.status != null">and t.status = #{item.status}</if>
+		<if test="item.isDel != null">and t.is_del = #{item.isDel}</if>
+	</sql>
+
+	<resultMap type="com.xiaozhi.rbt.sys.bean.SysUserBean" id="SysUserMap">
+		<id column="id" property="id"/>
+		<result column="org_id" property="orgId"/>
+		<result column="user_name" property="userName"/>
+		<result column="password_md5" property="passwordMd5"/>
+		<result column="mobile" property="mobile"/>
+		<result column="email" property="email"/>
+		<result column="sex" property="sex"/>
+		<result column="dept" property="dept"/>
+		<result column="input_acc" property="inputAcc"/>
+		<result column="input_time" property="inputTime"/>
+		<result column="update_acc" property="updateAcc"/>
+		<result column="update_time" property="updateTime"/>
+		<result column="status" property="status"/>
+		<result column="is_del" property="isDel"/>
+	</resultMap>
+	
+	<!-- 查询全部-->
+	<select id="find" resultMap="SysUserMap">
+		select
+		<include refid="cols"/>
+		from <include refid="tableName"/> t
+	</select>
+	
+	<!-- 列表查询-->
+	<select id="findByCondtion" resultMap="SysUserMap">
+		select
+		<include refid="cols"/>
+		from <include refid="tableName"/> t
+		where 1=1
+		<include refid="whereSql"/>
+		<if test="orderKey != null and orderKey != ''">order by ${orderKey}</if>
+	</select>
+	
+	<!-- 分页查询-->
+	<select id="findListPage"  parameterType="com.xiaozhi.common.interceptor.Pager" resultMap="SysUserMap">
+		select
+		<include refid="cols"/>
+		from <include refid="tableName"/> t
+		where 1=1
+		<include refid="whereSqlPage"/>
+		<if test="item.orderKey != null and item.orderKey != ''">order by ${item.orderKey}</if>
+	</select>
+	
+	<!-- 单个查询-->
+	<select id="getByCondtion" resultMap="SysUserMap">
+		select
+		<include refid="cols"/>
+		from <include refid="tableName"/> t
+		where 1=1
+		<include refid="whereSql"/>
+	</select>
+	
+	<!-- 主键查询-->
+	<select id="getByPrimaryKey" resultMap="SysUserMap">
+		select
+		<include refid="cols"/>
+		from <include refid="tableName"/> t
+		where 1=1
+		<if test="orgId != null and orgId != ''">and t.org_id = #{orgId}</if>
+		<if test="id != null and id != ''">and t.id = #{id}</if>
+	</select>
+	
+	<!-- 录入 -->
+	<insert id="insert" parameterType="com.xiaozhi.rbt.sys.bean.SysUserBean">
+	insert into <include refid="tableName"/>(id,org_id,user_name,password_md5,mobile,email,sex,dept,input_acc,input_time,update_acc,update_time,status,is_del)
+	values(#{id},#{orgId},#{userName},#{passwordMd5},#{mobile},#{email},#{sex},#{dept},#{inputAcc},#{inputTime},#{updateAcc},#{updateTime},#{status},#{isDel})
+	</insert>
+	
+	<!-- 批量录入 -->
+	<insert id="insertBatch" parameterType="ArrayList">  
+    insert into <include refid="tableName"/>(id,org_id,user_name,password_md5,mobile,email,sex,dept,input_acc,input_time,update_acc,update_time,status,is_del)
+    values
+    <foreach collection="list" item="bean" separator=",">
+    	(#{bean.id},#{bean.orgId},#{bean.userName},#{bean.passwordMd5},#{bean.mobile},#{bean.email},#{bean.sex},#{bean.dept},#{bean.inputAcc},#{bean.inputTime},#{bean.updateAcc},#{bean.updateTime},#{bean.status},#{bean.isDel})
+    </foreach>
+    </insert>
+    
+    <!-- 动态更新 -->
+	<update id="update">
+		update <include refid="tableName"/>
+		<include refid="setSql"/>
+		where 1=1
+		<if test="orgId != null and orgId != ''">and org_id = #{orgId}</if>
+		<if test="id != null">and id = #{id}</if>
+	</update>
+</mapper>

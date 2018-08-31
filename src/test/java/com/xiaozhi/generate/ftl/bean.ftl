@@ -5,8 +5,8 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.qftx.common.domain.BaseObject;
-import com.qftx.common.spring.JsonDateDeserializer;
+import com.xiaozhi.common.domain.BaseObject;
+import com.xiaozhi.common.spring.JsonDateDeserializer;
 
 /*
 *${table.tableCommont}

@@ -18,7 +18,7 @@ public class TempleteManager {
 		try {
 			//String path = this.getClass().getResource("/").getPath().replaceAll("target.*|WebRoot.*", "");
 			String path = System.getProperty("user.dir");
-			path+="/test/com/qftx/generate/ftl";
+			path+="/src/test/java/com/xiaozhi/generate/ftl";
 			cfg.setDirectoryForTemplateLoading(new File(path));
 		} catch (Exception e) {
 			e.printStackTrace();

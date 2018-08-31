@@ -3,6 +3,7 @@ package com.xiaozhi.common.interceptor;
 
 import com.xiaozhi.common.util.ConfigUtil;
 import com.xiaozhi.common.util.InfoUtil;
+import com.xiaozhi.demo.servlet.CustomFilter;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -13,7 +14,8 @@ import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.ResultHandler;
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.type.TypeHandlerRegistry;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -32,7 +34,7 @@ import java.util.regex.Matcher;
         @Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class,
                 RowBounds.class, ResultHandler.class})})
 public class LogTimeInterceptor implements Interceptor {
-    private static final Logger logger = Logger.getLogger(LogTimeInterceptor.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(CustomFilter.class);
     private Properties properties;
 
     public Object intercept(Invocation invocation) throws Throwable {

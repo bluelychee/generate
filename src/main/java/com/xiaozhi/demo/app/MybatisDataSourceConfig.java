@@ -1,6 +1,8 @@
 package com.xiaozhi.demo.app;
 
 import com.github.pagehelper.PageInterceptor;
+import com.xiaozhi.common.interceptor.LogTimeInterceptor;
+import com.xiaozhi.common.interceptor.PagerInterceptor;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -39,10 +41,10 @@ public class MybatisDataSourceConfig {
     public SqlSessionFactory mybatisMasterSqlSessionFactory(DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:com.mybatis.mapper/*.xml"));
+        //bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath*:com.mybatis.mapper/*.xml"));
 
         // 设置MyBatis分页插件
-        PageInterceptor pageInterceptor = this.initPageInterceptor();
+        PagerInterceptor pageInterceptor = this.initPageInterceptor();
         bean.setPlugins(new Interceptor[]{pageInterceptor});
 
         return bean.getObject();
@@ -54,7 +56,7 @@ public class MybatisDataSourceConfig {
         mScannerConfigurer.setSqlSessionFactoryBeanName("mybatisMasterSqlSessionFactory");
         //mScannerConfigurer.setBasePackage("com.my.boot.test.entity");
         //mScannerConfigurer.setBasePackage("com.my.boot.test.mapper");
-        mScannerConfigurer.setBasePackage("com.xiaozhi.demo");
+        mScannerConfigurer.setBasePackage("com.xiaozhi");
         return mScannerConfigurer;
     }
 
@@ -68,14 +70,29 @@ public class MybatisDataSourceConfig {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 
-    public PageInterceptor initPageInterceptor(){
-        PageInterceptor pageInterceptor = new PageInterceptor();
+    @Bean
+    public PagerInterceptor initPageInterceptor(){
+       /* PageInterceptor pageInterceptor = new PageInterceptor();
         Properties properties = new Properties();
         properties.setProperty("helperDialect", "mysql");
         properties.setProperty("offsetAsPageNum", "true");
         properties.setProperty("rowBoundsWithCount", "true");
+        pageInterceptor.setProperties(properties);*/
+        PagerInterceptor pageInterceptor = new PagerInterceptor();
+        Properties properties = new Properties();
+        properties.setProperty("dialect", "mysql");
+        properties.setProperty("pageSqlId", ".*ListPage.*");
         pageInterceptor.setProperties(properties);
         return pageInterceptor;
+    }
+
+    @Bean
+    public LogTimeInterceptor initLogTimeInterceptor(){
+        Properties properties = new Properties();
+        properties.setProperty("dialect", "mysql");
+        properties.setProperty("pageSqlId", ".*ListPage.*");
+        //pageInterceptor.setProperties(properties);
+        return new LogTimeInterceptor();
     }
 
 }

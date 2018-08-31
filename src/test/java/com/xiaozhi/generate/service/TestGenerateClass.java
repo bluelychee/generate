@@ -24,7 +24,7 @@ public class TestGenerateClass extends BaseTests {
 		//generateClass.createClass("rbt_procedure_person", "procedure");
 		//generateClass.createClass("rbt_procedure_record", "record");
 		//generateClass.createClass("rbt_procedure_report_pri", "report");
-		generateClass.createClass("rbt_communication_channel", "procedure");
+		generateClass.createClass("sys_user", "sys");
 		
 		//generateClass.createClass("rbt_res_cust_info", "res");
 		/*generateClass.createClass("rbt_procedure", "procedure");*/

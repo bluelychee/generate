@@ -2,7 +2,7 @@ package ${daoPkg};
 
 import java.util.List;
 
-import com.qftx.common.interceptor.Pager;
+import com.xiaozhi.common.interceptor.Pager;
 import ${pojoPkg}.${table.beanName}Bean;
 
 public interface ${table.mapperName}{

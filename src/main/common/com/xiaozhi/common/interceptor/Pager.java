@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.ArrayList;
 import java.util.List;
 
-@JsonIgnoreProperties({ "list","item"})
+@JsonIgnoreProperties({ "item"})
 public class Pager<T> {
     private int pageSize = 10;//一页显示记录数
     private int currentPage = 1;//当前页

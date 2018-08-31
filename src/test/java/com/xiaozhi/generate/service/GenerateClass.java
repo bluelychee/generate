@@ -34,9 +34,9 @@ public class GenerateClass {
 	public void initPath(){
 		//String basePath = this.getClass().getResource("/").getPath().replaceAll("target.*|WebRoot.*", "");
 		String basePath = System.getProperty("user.dir");
-		srcPath = basePath+ "/src/";
-		testPath =basePath+ "/test/";
-		webPath =basePath+ "/src.web/";
+		srcPath = basePath+ "/src/main/java/";
+		testPath =basePath+ "/src/test/java/";
+		webPath =basePath+ "/src/main/web/";
 	}
 	
 	public void createClass(Map<String,String[]> modules){
@@ -58,7 +58,7 @@ public class GenerateClass {
 		String pojoPkg = basePkg+"."+modulePkgName+".bean";
 		String daoPkg = basePkg+"."+modulePkgName+".dao";
 		String servicePkg = basePkg+"."+modulePkgName+".service";
-		String webPkg = "com.qftx.web."+modulePkgName;
+		String webPkg = basePkg+".web."+modulePkgName;
 		
 		
 		param.put("modulePkgName", modulePkgName );
@@ -147,5 +147,4 @@ public class GenerateClass {
 		}
 		return temp;
 	}
-	
 }

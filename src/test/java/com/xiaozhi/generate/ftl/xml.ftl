@@ -64,7 +64,7 @@
 	</select>
 	
 	<!-- 分页查询-->
-	<select id="findListPage"  parameterType="com.qftx.common.interceptor.Pager" resultMap="${table.beanName}Map">
+	<select id="findListPage" parameterType="com.xiaozhi.common.interceptor.Pager" resultMap="${table.beanName}Map">
 		select
 		<include refid="cols"/>
 		from <include refid="tableName"/> t

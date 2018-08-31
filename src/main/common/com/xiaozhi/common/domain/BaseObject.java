@@ -12,8 +12,8 @@ import java.io.Serializable;
  * @author yhq [unicorn668@163.com] 创建时间：2012-11-2 上午10:22:20
  * @version V1.0
  */
-@JsonIgnoreProperties({"sysType", "orderKey", "groupKey", "createTime", "startDate", "endDate", "page"})
-@JSONType(ignores = {"sysType", "orderKey", "groupKey", "createTime", "startDate", "endDate", "page"})
+@JsonIgnoreProperties({"orderKey", "groupKey", "startDate", "endDate", "limitKey"})
+@JSONType(ignores = {"orderKey", "groupKey", "startDate", "endDate", "limitKey"})
 public abstract class BaseObject implements Serializable {
     private static final long serialVersionUID = 1L;
     private String orderKey;// 排序字段串用英文逗号分隔

@@ -5,15 +5,15 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import com.xiaozhi.BaseTests;
+import com.xiaozhi.common.interceptor.Pager;
 import org.junit.Test;
 import org.apache.log4j.Logger;
 
 import com.alibaba.fastjson.JSON;
-import com.qftx.common.BaseUtest;
-import com.qftx.common.interceptor.Pager;
 import ${pojoPkg}.${table.beanName}Bean;
 
-public class Test${table.serviceName} extends BaseUtest{
+public class Test${table.serviceName} extends BaseTests{
 	@Resource
 	${table.serviceName} ${table.serviceName?uncap_first};
 	

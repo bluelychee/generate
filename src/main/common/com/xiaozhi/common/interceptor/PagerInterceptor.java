@@ -33,7 +33,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.Properties;
 
-@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class}),
+@Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class}),
         @Signature(type = ResultSetHandler.class, method = "handleResultSets", args = {Statement.class})})
 public class PagerInterceptor implements Interceptor {
     private final Logger logger = Logger.getLogger(PagerInterceptor.class.getName());

@@ -7,9 +7,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.qftx.base.shiro.ShiroUser;
-import com.qftx.common.interceptor.Pager;
-import com.qftx.common.util.GuidUtil;
+import com.xiaozhi.common.interceptor.Pager;
+import com.xiaozhi.common.util.GuidUtil;
 import ${pojoPkg}.${table.beanName}Bean;
 import ${daoPkg}.${table.mapperName};
 
@@ -38,34 +37,28 @@ public class ${table.serviceName}{
 		return ${table.mapperName?uncap_first}.getByCondtion(entity);
 	}
 
-	public void insert(${table.beanName}Bean entity,ShiroUser user){
+	public void insert(${table.beanName}Bean entity){
 		entity.setId(GuidUtil.getGuid());
-		entity.setOrgId(user.getOrgId());
-		entity.setInputAcc(user.getAccount());
 		entity.setInputTime(new Date());
 		entity.setIsDel(0);
 		${table.mapperName?uncap_first}.insert(entity);
 	}
 
-	public void insertBatch(List<${table.beanName}Bean> entitys,ShiroUser user){
+	public void insertBatch(List<${table.beanName}Bean> entitys){
 		for (${table.beanName}Bean entity : entitys) {
 			entity.setId(GuidUtil.getGuid());
-			entity.setOrgId(user.getOrgId());
-			entity.setInputAcc(user.getAccount());
 			entity.setInputTime(new Date());
 			entity.setIsDel(0);
 		}
 		${table.mapperName?uncap_first}.insertBatch(entitys);
 	}
 
-	public void update(${table.beanName}Bean entity,ShiroUser user){
-		entity.setUpdateAcc(user.getAccount());
-		entity.setOrgId(user.getOrgId());
+	public void update(${table.beanName}Bean entity){
 		entity.setUpdateTime(new Date());
 		${table.mapperName?uncap_first}.update(entity);
 	}
 	
-	public void del(${table.beanName}Bean entity,ShiroUser user){
-		update(entity, user);
+	public void del(${table.beanName}Bean entity){
+		update(entity);
 	}
 }
