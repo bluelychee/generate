@@ -12,8 +12,8 @@ import org.springframework.context.annotation.ComponentScan;
 import javax.servlet.Filter;
 
 @SpringBootApplication
-@ServletComponentScan(basePackages = {"com.xiaozhi.demo"})
-@ComponentScan(basePackages = {"com.xiaozhi.demo"})
+@ServletComponentScan(basePackages = {"com.xiaozhi"})
+@ComponentScan(basePackages = {"com.xiaozhi"})
 public class DemoApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

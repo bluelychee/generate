@@ -20,7 +20,7 @@ import java.util.Properties;
  * Create by lizhihui on 2018/8/9
  */
 @Configuration
-@MapperScan(basePackages = "com.xiaozhi.demo", sqlSessionTemplateRef  = "mybatisMasterSqlSessionTemplate")
+@MapperScan(basePackages = "com.xiaozhi", sqlSessionTemplateRef  = "mybatisMasterSqlSessionTemplate")
 public class MybatisDataSourceConfig {
 
     @Bean

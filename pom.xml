@@ -55,10 +55,10 @@
         <!-- spring boot 内置tomcat jsp支持 -->
 
         <!-- freemarker -->
-       <!-- <dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
