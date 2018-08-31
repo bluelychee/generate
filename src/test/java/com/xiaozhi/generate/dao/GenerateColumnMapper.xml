@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaozhi.generate.dao.GenerateColumnMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaozhi.generate.bean.GenerateColumn" >
+   	<result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR" />
+    <result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
+    <result column="DATA_TYPE" property="dataType" jdbcType="VARCHAR" />
+    <result column="COLUMN_KEY" property="columnKey" jdbcType="VARCHAR" />
+    <result column="COLUMN_COMMENT" property="columnCommont" jdbcType="VARCHAR" />
+    <result column="IS_NULLABLE" property="isNullable" jdbcType="VARCHAR" />
+    <result column="COLUMN_TYPE" property="columnType" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+   table_name,column_name, data_type, column_key, column_comment,is_nullable,column_type
+  </sql>
+  
+  <select id="findByTable" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from information_schema.COLUMNS
+    where table_schema='demo' and table_name = #{tableName,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from information_schema.columns
+    where table_schema='demo'
+  </select>
+  
+  <select id="ct" resultType="int">
+    select count(1) from ${table}
+    where ${column} like '%${text}%' 
+    or lower(${column}) like '%${text}%' 
+  </select>
+  
+</mapper>
