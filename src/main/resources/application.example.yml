@@ -24,35 +24,7 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-
-### thymeleaf
-  thymeleaf:
-    cache: false
-    check-template-location: true
-    content-type: text/html
-    enabled: true
-    encoding: utf-8
-    excluded-view-names:
-    prefix: classpath:/templates/
-    suffix: .html
-
-###  freemarker
-#  freemarker:
-#    cache: false
-#    suffix: .html
-#    charset: UTF-8
-#    template-loader-path: classpath:/templates/
-
-#### jsp
-#  mvc:
-#    view:
-#      prefix: /WEB-INF/jsp/
-#      suffix: .jsp
+  profiles:
+    active: freemarker
 
 
-#  profiles:
-#    include: freemarker
-
-mybatis:
-  mapper-locations: classpath:mapping/*.xml
-  type-aliases-package: com.xiaozhi.model
