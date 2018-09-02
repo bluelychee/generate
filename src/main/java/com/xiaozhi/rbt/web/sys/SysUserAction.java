@@ -1,4 +1,4 @@
-package com.xiaozhi.rbt.web;
+package com.xiaozhi.rbt.web.sys;
 
 import java.util.List;
 

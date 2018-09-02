@@ -1,7 +1,8 @@
-package com.xiaozhi.common.generate.service;
+package com.xiaozhi.common.generate;
 
 import com.alibaba.fastjson.JSON;
 import com.xiaozhi.BaseTests;
+import com.xiaozhi.common.generate.service.GenerateClass;
 import com.xiaozhi.demo.user.bean.User;
 import com.xiaozhi.demo.user.service.UserService;
 import org.junit.Test;

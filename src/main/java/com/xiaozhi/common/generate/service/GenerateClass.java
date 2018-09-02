@@ -35,7 +35,7 @@ public class GenerateClass {
 		String basePath = System.getProperty("user.dir");
 		srcPath = basePath+ "/src/main/java/";
 		testPath =basePath+ "/src/test/java/";
-		webPath =basePath+ "/src/main/web/";
+		webPath =basePath+ "/src/main/java/";
 	}
 	
 	public void createClass(Map<String,String[]> modules){

@@ -1,5 +1,6 @@
-package com.xiaozhi.common.generate.service;
+package com.xiaozhi.common.generate;
 
+import com.xiaozhi.common.generate.service.GenerateClass;
 import com.xiaozhi.common.util.GuidUtil;
 import com.xiaozhi.BaseTests;
 import org.junit.Test;
@@ -24,7 +25,7 @@ public class TestGenerateClass extends BaseTests {
 		//generateClass.createClass("rbt_procedure_person", "procedure");
 		//generateClass.createClass("rbt_procedure_record", "record");
 		//generateClass.createClass("rbt_procedure_report_pri", "report");
-		generateClass.createClass("sys_user", "sys");
+		generateClass.createClass("sys_role", "sys");
 		
 		//generateClass.createClass("rbt_res_cust_info", "res");
 		/*generateClass.createClass("rbt_procedure", "procedure");*/
