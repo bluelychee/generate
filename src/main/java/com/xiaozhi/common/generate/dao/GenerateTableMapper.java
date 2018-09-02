@@ -1,6 +1,6 @@
-package com.xiaozhi.generate.dao;
+package com.xiaozhi.common.generate.dao;
 
-import com.xiaozhi.generate.bean.GenerateTable;
+import com.xiaozhi.common.generate.bean.GenerateTable;
 import org.apache.ibatis.annotations.Param;
 
 public interface GenerateTableMapper {

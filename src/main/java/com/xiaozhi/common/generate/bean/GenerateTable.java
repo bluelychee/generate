@@ -1,8 +1,7 @@
-package com.xiaozhi.generate.bean;
+package com.xiaozhi.common.generate.bean;
 
-import com.xiaozhi.generate.service.GenerateUtile;
+import com.xiaozhi.common.generate.service.GenerateUtile;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class GenerateTable {

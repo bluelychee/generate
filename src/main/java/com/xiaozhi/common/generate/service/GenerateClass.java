@@ -1,19 +1,18 @@
-package com.xiaozhi.generate.service;
+package com.xiaozhi.common.generate.service;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
-import com.xiaozhi.generate.bean.GenerateColumn;
-import com.xiaozhi.generate.bean.GenerateTable;
-import com.xiaozhi.generate.dao.GenerateColumnMapper;
-import com.xiaozhi.generate.dao.GenerateTableMapper;
+import com.xiaozhi.common.generate.bean.GenerateColumn;
+import com.xiaozhi.common.generate.bean.GenerateTable;
+import com.xiaozhi.common.generate.dao.GenerateColumnMapper;
+import com.xiaozhi.common.generate.dao.GenerateTableMapper;
 import org.springframework.stereotype.Service;
 
 @Service

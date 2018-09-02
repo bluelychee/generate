@@ -1,9 +1,9 @@
-package com.xiaozhi.generate.dao;
+package com.xiaozhi.common.generate.dao;
 
 import java.util.List;
 import java.util.Map;
 
-import com.xiaozhi.generate.bean.GenerateColumn;
+import com.xiaozhi.common.generate.bean.GenerateColumn;
 import org.apache.ibatis.annotations.Param;
 
 

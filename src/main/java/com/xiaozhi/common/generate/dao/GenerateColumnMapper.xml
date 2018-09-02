@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xiaozhi.generate.dao.GenerateColumnMapper" >
-  <resultMap id="BaseResultMap" type="com.xiaozhi.generate.bean.GenerateColumn" >
+<mapper namespace="com.xiaozhi.common.generate.dao.GenerateColumnMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaozhi.common.generate.bean.GenerateColumn" >
    	<result column="TABLE_NAME" property="tableName" jdbcType="VARCHAR" />
     <result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
     <result column="DATA_TYPE" property="dataType" jdbcType="VARCHAR" />

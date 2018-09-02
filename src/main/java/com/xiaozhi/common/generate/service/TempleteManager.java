@@ -1,4 +1,4 @@
-package com.xiaozhi.generate.service;
+package com.xiaozhi.common.generate.service;
 
 import java.io.File;
 import java.io.IOException;

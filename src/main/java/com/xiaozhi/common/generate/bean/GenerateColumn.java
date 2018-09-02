@@ -1,8 +1,8 @@
-package com.xiaozhi.generate.bean;
+package com.xiaozhi.common.generate.bean;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.xiaozhi.generate.service.GenerateUtile;
+import com.xiaozhi.common.generate.service.GenerateUtile;
 
 public class GenerateColumn {
 	private String tableName;

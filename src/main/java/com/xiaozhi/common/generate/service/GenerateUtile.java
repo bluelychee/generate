@@ -1,4 +1,4 @@
-package com.xiaozhi.generate.service;
+package com.xiaozhi.common.generate.service;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class GenerateUtile {

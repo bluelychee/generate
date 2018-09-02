@@ -1,4 +1,4 @@
-package com.xiaozhi.generate.service;
+package com.xiaozhi.common.generate.service;
 
 import com.alibaba.fastjson.JSON;
 import com.xiaozhi.BaseTests;
