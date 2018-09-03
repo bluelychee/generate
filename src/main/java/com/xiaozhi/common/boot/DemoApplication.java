@@ -1,6 +1,6 @@
-package com.xiaozhi.demo.app;
+package com.xiaozhi.common.boot;
 
-import com.xiaozhi.demo.servlet.CustomFilter;
+import com.xiaozhi.common.filter.CustomFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

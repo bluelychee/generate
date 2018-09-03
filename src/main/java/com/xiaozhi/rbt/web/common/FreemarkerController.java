@@ -1,4 +1,4 @@
-package com.xiaozhi.demo.controller;
+package com.xiaozhi.rbt.web.common;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

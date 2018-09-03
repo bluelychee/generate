@@ -1,9 +1,8 @@
 package com.xiaozhi.common.interceptor;
 
 
-import com.xiaozhi.common.util.ConfigUtil;
 import com.xiaozhi.common.util.InfoUtil;
-import com.xiaozhi.demo.servlet.CustomFilter;
+import com.xiaozhi.common.filter.CustomFilter;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;

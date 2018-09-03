@@ -1,4 +1,4 @@
-package com.xiaozhi.demo.app;
+package com.xiaozhi.common.boot.config;
 
 import com.xiaozhi.common.interceptor.LogTimeInterceptor;
 import com.xiaozhi.common.interceptor.PagerInterceptor;

@@ -1,4 +1,4 @@
-package com.xiaozhi.demo.app;
+package com.xiaozhi.common.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

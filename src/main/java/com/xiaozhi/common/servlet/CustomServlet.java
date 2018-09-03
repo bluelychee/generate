@@ -1,4 +1,4 @@
-package com.xiaozhi.demo.servlet;
+package com.xiaozhi.common.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

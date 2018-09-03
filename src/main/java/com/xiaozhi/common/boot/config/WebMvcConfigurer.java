@@ -1,6 +1,6 @@
-package com.xiaozhi.demo.app;
+package com.xiaozhi.common.boot.config;
 
-import com.xiaozhi.demo.servlet.CustomSpringInterceptor;
+import com.xiaozhi.common.interceptor.CustomSpringInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
