@@ -1,6 +1,5 @@
 package com.xiaozhi.rbt.web.common;
 
-import com.xiaozhi.common.exception.AuthExcepiton;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.shiro.SecurityUtils;
@@ -25,19 +24,18 @@ import javax.servlet.http.HttpSession;
  */
 
 @Controller
-public class SessionAction {
+public class LoginAction {
     @Value("${app.server.id}")
     private String serverName;
     @Resource
     JdbcTemplate jdbcTemplate;
 
-    private static Log logger = LogFactory.getLog(SessionAction.class);
+    private static Log logger = LogFactory.getLog(LoginAction.class);
 
-    @RequestMapping("/index")
-    @ResponseBody
+    @RequestMapping(value={"/","/index"})
     public String Hello(HttpSession session) {
         logger.info(serverName + "Request!");
-        return serverName + "\t" + session.getId();
+        return "index";
     }
 
     @RequestMapping("/time")
@@ -52,7 +50,7 @@ public class SessionAction {
         throw new Exception("系统异常！");
     }
 
-    @RequestMapping(value = {"/login","/"},method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"},method = RequestMethod.GET)
     public String loginGet() {
         return "login";
     }
